@@ -1,3 +1,7 @@
-<p>
-  messages works!
-</p>
+
+<div class="container">
+  <h2>Crisis Locations</h2>
+    <div class="list-group" *ngFor="let location of locations">
+      <a href="#" class="list-group-item">Coordinates: {{location.latitude}} , {{location.longitude}}</a><br>
+    </div>
+</div>

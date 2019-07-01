@@ -1,0 +1,48 @@
+<html>
+    <meta charset="utf-8" />
+    <link 
+        rel="stylesheet" 
+        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+    />
+<body>
+
+    <div id="map" style="width: 600px; height: 400px"></div>
+
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
+
+    <script>
+
+	var planes = [
+		["Damascus",33.513805,36.276527,"weather favourable for drone manouver"],
+		["Aleppo",36.202106,37.134258,"weather favourable for drone manouver"],
+		["Homs",34.732426,36.713696,"Weather slightly windy for drone manouver"],
+		["Ar Raqqah",35.946720,39.037020,"Weather unfavourable, abort trip"]
+        ];
+    
+   
+
+        var map = L.map('map').setView([-41.3058, 174.82082], 8);
+        mapLink = 
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]]).addTo(map)
+				.bindPopup(planes[i][0]+"("+planes[i][1]+","+planes[i][2]+")<br/>"+planes[i][3])
+				.openPopup();
+		}
+      
+	mymap.on('click', onMapClick);
+
+</script>
+
+
+
+</body>
+</html>

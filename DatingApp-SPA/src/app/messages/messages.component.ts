@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-messages',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor() { }
+  locations: any;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.getValues();
+  }
+
+  getValues() {
+    this.http.get('http://localhost:5000/api/locations')
+    .subscribe(response => {
+      this.locations = response;
+      console.log(this.locations);
+    }, error => {
+      console.log(error);
+    });
   }
 
 }
