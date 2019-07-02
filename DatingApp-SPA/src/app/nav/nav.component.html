@@ -2,16 +2,16 @@
   <div class="container">
     <a class="nav-link" [routerLink]="['/home']"  >Human Notion </a>
   <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-    <!--
+    
     <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" [routerLink]="['/members']"  >Map </a>
+      <a class="nav-link" [routerLink]="['/members']"  >Members </a>
     </li>
-  -->
+  
     <li class="nav-item">
-        <a class="nav-link" href="http://mappage.tk"  >Map </a>
-      </li>
+        <a class="nav-link" href="http://mappage.tk"  >Lists </a>
+    </li>
     <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" [routerLink]="['/messages']" >Location Management</a>
+      <a class="nav-link" [routerLink]="['/messages']" >Messages</a>
     </li>
   </ul>
 
