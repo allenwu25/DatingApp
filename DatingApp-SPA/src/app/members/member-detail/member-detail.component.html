@@ -16,19 +16,19 @@
           <div>
             <strong>Age:</strong>
             <p>
-              {{user.city}}, {{user.country}}
+              {{user.age}}
             </p>
           </div>
           <div>
             <strong>Last Active:</strong>
             <p>
-              {{user.lastActive}}
+              {{user.lastActive | timeAgo}}
             </p>
           </div>
           <div>
             <strong>Member since:</strong>
             <p>
-              {{user.created}}
+              {{user.created | date}}
             </p>
           </div>
         </div>
